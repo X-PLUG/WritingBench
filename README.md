@@ -9,14 +9,16 @@
        width="900">
 </div>
 
-## 🚀 What's New
+## 🚀 What's New 
 
-- **🏆 Leaderboard Launch**: Explore evaluation results on [Hugging Face Leaderboard](https://huggingface.co/spaces/WritingBench/WritingBench) and [ModelScope Leaderboard](https://modelscope.cn/studios/WritingBench/WritingBench).
-- Update latest LLM evaluations (Claude-3-7-Sonnet, o3, grok-3, etc)
-- Update [benchmark queries & criteria](https://github.com/X-PLUG/WritingBench/blob/main/benchmark_query/benchmark_all.jsonl) for improved assessment. 
-- Update [evaluation prompt](https://github.com/X-PLUG/WritingBench/blob/main/prompt.py) for better scoring, and switch to using Claude-3-7-Sonnet for evaluation.
+#### ```2025-04-29```
+- **🏆 Leaderboard Launch**: Explore evaluation results on [Hugging Face Leaderboard](https://huggingface.co/spaces/WritingBench/WritingBench) and [ModelScope Leaderboard](https://modelscope.cn/studios/WritingBench/WritingBench). Update latest LLM evaluations (Claude-3-7-Sonnet, o3, grok-3, etc)
+- ‼️ Update [benchmark queries & criteria](https://github.com/X-PLUG/WritingBench/blob/main/benchmark_query/benchmark_all.jsonl) for improved assessment, including **1,000** queries. 
+- ‼️ Update [evaluation prompt](https://github.com/X-PLUG/WritingBench/blob/main/prompt.py) for better scoring, and switch to using **Claude-3-7-Sonnet** for evaluation.
 - Temporarily suspended style/format/length requirement subsets (new version work in progress).
-
+  
+#### ```2025-03-10```
+- We release the first version of WritingBench, including **1,239** writing queries and style/format/length dimension subsets.
 
 ## 📖 Overview
 WritingBench is a comprehensive benchmark for evaluating LLMs' writing capabilities across **1,000 real-world queries**, spanning:
