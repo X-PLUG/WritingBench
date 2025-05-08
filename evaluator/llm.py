@@ -13,9 +13,8 @@ class ClaudeAgent(object):
     
     def call_claude(self,
              messages: str,
-             top_k: int = 20,
-             top_p: float = 0.8,
-             temperature: float = 0.7,
+             top_p: float = 0.95,
+             temperature: float = 1.0,
              max_length: int = 2048):
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -26,7 +25,6 @@ class ClaudeAgent(object):
             "model": f"{self.model}",  
             "messages": messages,  
             "max_tokens": max_length,
-            "top_k": top_k,
             "top_p": top_p,
             "temperature": temperature
         }
@@ -61,9 +59,8 @@ class ClaudeAgent(object):
     
     def run(self,
             prompt: str,
-            top_k: int = 20,
-            top_p: float = 0.8,
-            temperature: float = 0.7,
+            top_p: float = 0.95,
+            temperature: float = 1.0,
             max_length: int = 2048,
             max_try: int = 5,
             success_check_fn: Callable = None):
@@ -78,7 +75,6 @@ class ClaudeAgent(object):
         while try_times < max_try:
             response = self.call_claude(
                 messages=messages,
-                top_k=top_k,
                 top_p=top_p,
                 temperature=temperature,
                 max_length=max_length,
