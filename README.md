@@ -1,6 +1,6 @@
 # WritingBench: A Comprehensive Benchmark for Generative Writing
 <p align="center">
-  📃 <a href="https://arxiv.org/abs/2503.05244" target="_blank">[Paper]</a> • 🚀 <a href="https://github.com/X-PLUG/WritingBench" target="_blank">[Github Repo]</a> • 🏆 <a href="https://github.com/X-PLUG/WritingBench" target="_blank">[Leaderboard]</a> • 📏 <a href="https://huggingface.co/AQuarterMile/WritingBench-Critic-Model-Qwen-7B" target="_blank">[Critic Model]</a> • ✍️ <a href="https://huggingface.co/AQuarterMile/Writing-Model-Qwen-7B" target="_blank">[Writing Model]</a>
+  📃 <a href="https://arxiv.org/abs/2503.05244" target="_blank">[Paper]</a> • 🚀 <a href="https://github.com/X-PLUG/WritingBench" target="_blank">[Github Repo]</a> • 🏆 <a href="https://huggingface.co/spaces/WritingBench/WritingBench" target="_blank">[Leaderboard]</a> • 📏 <a href="https://huggingface.co/AQuarterMile/WritingBench-Critic-Model-Qwen-7B" target="_blank">[Critic Model]</a> • ✍️ <a href="https://huggingface.co/AQuarterMile/Writing-Model-Qwen-7B" target="_blank">[Writing Model]</a>
 </p>
 
 <div align="center">
