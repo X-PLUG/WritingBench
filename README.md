@@ -125,7 +125,7 @@ git clone https://github.com/yourusername/WritingBench.git
 ```bash
 python evaluate_benchmark.py \
   --evaluator critic  # or claude
-  --query_criteria_file query_set.jsonl \
+  --query_criteria_file query_set.jsonl # use files under benchmark_query/ \
   --input_file samples.jsonl \
   --output_file scores.jsonl
 ```
