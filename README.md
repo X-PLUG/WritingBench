@@ -79,7 +79,7 @@ For each criterion $c_i \in C_q$, the evaluator independently assigns a score on
 
 ## 🛠 Installation
 ```bash
-git clone https://github.com/yourusername/WritingBench.git
+git clone https://github.com/X-PLUG/WritingBench.git
 ```
 
 ## 📂 Repository Structure
