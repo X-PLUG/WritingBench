@@ -25,7 +25,7 @@
 WritingBench is a comprehensive benchmark for evaluating LLMs' writing capabilities across **1,000 real-world queries**, spanning:
 - 6 primary domains 
 - 100 fine-grained subdomains
-- 1,000+ avg. tokens per query
+- 1,500+ avg. tokens per query
 
 WritingBench integrates diverse sources of materials. Each query is paired with **5 instance-specific criteria**, scoring either through LLM evaluators or through a finetuned critic model.
 
