@@ -83,7 +83,7 @@ def load_query_criteria(jsonl_file_path):
         for obj in reader:
             data_list[obj['index']] = {}
             data_list[obj['index']]['query'] = obj['query']
-            data_list[obj['index']]['criteria'] = obj['criteria']
+            data_list[obj['index']]['criteria'] = obj['checklist']
     return data_list
 
 def process(agent, input_file, out_file, id_query_criteria_map):
