@@ -15,6 +15,7 @@
 - **🏆 Leaderboard Launch**: Explore evaluation results on [Hugging Face Leaderboard](https://huggingface.co/spaces/WritingBench/WritingBench) and [ModelScope Leaderboard](https://modelscope.cn/studios/WritingBench/WritingBench). Update latest LLM evaluations (Claude-3-7-Sonnet, o3, grok-3, etc)
   - Parameters for response generation: `top_p: 0.8`; `top_k: 20`; `temperature: 0.7`; `max_length: 16000` (or maximum allowed if less than 16000)
   - Parameters for scoring: `top_p: 0.95`; `top_k: (empty)`; `temperature: 1.0`; `max_length: 2048`
+  - Leaderboard scores are scaled from 10 to 100 by multiplying by 10 for easier viewing.
 - ‼️ Update [benchmark queries & criteria](https://github.com/X-PLUG/WritingBench/blob/main/benchmark_query/benchmark_all.jsonl) for improved assessment, including **1,000** queries and requirement dimension subsets. 
 - ‼️ Update [evaluation prompt](https://github.com/X-PLUG/WritingBench/blob/main/prompt.py) for better scoring, and switch to using **Claude-3-7-Sonnet** for evaluation.
   
