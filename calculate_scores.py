@@ -35,11 +35,11 @@ def read_scores_file(jsonl_file_path):
             for criteria, evaluations in scores.items():
                 criteria_lis = []
                 for eval in evaluations:
-                    avg_score += eval['score'] * 10
-                    total_scores_sum[index] += eval['score'] * 10
+                    avg_score += eval['score']
+                    total_scores_sum[index] += eval['score']
                     total_count[index] += 1
                     total_criteria += 1
-                    criteria_lis.append(eval['score'] * 10)
+                    criteria_lis.append(eval['score'])
                 scores_data_details[index][criteria] = sum(criteria_lis) / len(criteria_lis)
 
             avg_score = avg_score / total_criteria
