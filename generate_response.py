@@ -67,7 +67,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process lines from an input file.")
     parser.add_argument("--query_file", type=str, help="Path to the query file.")
     parser.add_argument("--output_file", type=str, help="Path to the output file.")
-    parser.add_argument("--model", type=str, help="Path to the output file.")
 
     args = parser.parse_args()
 
