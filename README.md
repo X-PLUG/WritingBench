@@ -86,7 +86,9 @@ git clone https://github.com/X-PLUG/WritingBench.git
 ## 📂 Repository Structure
 ```bash
 .
+├── generate_response.py      # Generation script
 ├── evaluate_benchmark.py     # Evaluation script
+├── calculate_scores.py       # Scoring script
 ├── prompt.py                 # Prompt templates
 ├── evaluator/
 │   ├── __int__.py
