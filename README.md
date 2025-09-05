@@ -11,6 +11,11 @@
 
 ## 🚀 What's New 
 
+#### ```2025-09-05```
+- Switch to **Claude-Sonnet-4** for evaluation.
+- Add scripts for response generation and score aggregation; see the [Quick Start](#-quick-start) section for details.
+- Leaderboard update: introduced requirement-dimension scores and updated the latest LLM evaluation results.
+    
 #### ```2025-04-29```
 - **🏆 Leaderboard Launch**: Explore evaluation results on [Hugging Face Leaderboard](https://huggingface.co/spaces/WritingBench/WritingBench) and [ModelScope Leaderboard](https://modelscope.cn/studios/WritingBench/WritingBench). Update latest LLM evaluations (Claude-3-7-Sonnet, o3, grok-3, etc)
   - Parameters for response generation: `top_p: 0.8`; `top_k: 20`; `temperature: 0.7`; `max_length: 16000` (or maximum allowed if less than 16000)
@@ -157,6 +162,10 @@ python calculate_scores.py \
   --output_excel ./scores.xlsx \              # Path to the aggregated-result Excel file to be generated
   --requirement_dir ./requirement             # Requirement folder included in the repository
 ```
+
+## 🤝 Contributing and Contact
+
+WritingBench aims to be a reliable, comprehensive, and sustainable community resource for charting the frontiers of generative writing. If you are interested in leaderboard construction or any further discussion, please reach out via GitHub or email.
 
 
 ## 📝 Citation
