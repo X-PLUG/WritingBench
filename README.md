@@ -13,7 +13,7 @@
 
 #### ```2025-11-27```
 - Switch to **Claude-Sonnet-4-5** for evaluation.
-- 
+  
 #### ```2025-09-05```
 - Switch to **Claude-Sonnet-4** for evaluation.
 - Add scripts for response generation and score aggregation; see the [Quick Start](#-quick-start) section for details.
