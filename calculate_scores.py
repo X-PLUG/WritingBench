@@ -196,7 +196,7 @@ def aggregate_scores(input_directory, domain_file, output_excel_file, requiremen
         rows.append(ordered)
 
     df = pd.DataFrame(rows)
-    df.to_excel(output_excel, index=False)
+    df.to_excel(output_excel_file, index=False)
 
 
 if __name__ == "__main__":
