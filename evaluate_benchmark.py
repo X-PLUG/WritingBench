@@ -8,6 +8,15 @@ from evaluator import ClaudeAgent, CriticAgent
 
 EVAL_TIMES = 1
 
+def process_gen_field(gen_content):
+    marker = "</think>\n\n"
+    marker_pos = gen_content.find(marker)
+    
+    if marker_pos != -1:
+        return gen_content[marker_pos + len(marker):]
+    else:
+        return gen_content
+        
 class EvalAgent(object):
     def __init__(self, agent):
         self.agent = agent
@@ -34,7 +43,7 @@ class EvalAgent(object):
     def generate_score(self, content, query, criteria):
         prompt_data = {
             "query": query,
-            "response": content["response"],
+            "response": process_gen_field(["response"]),
             "criteria": criteria,
         }
         retry = 0
@@ -109,7 +118,7 @@ def process(agent, input_file, out_file, id_query_criteria_map):
 
             with tqdm(total=len(criteria) * EVAL_TIMES, desc=f"Data ID {content['index']} Progress", leave=False) as internal_pbar:
                 for c in criteria:
-                    if c["name"] not in criteria:
+                    if c["name"] not in data["scores"]:
                         data["scores"][c["name"]] = []
                     while len(data["scores"][c["name"]]) < EVAL_TIMES:
                         score = agent.generate_score(content, query, c)
