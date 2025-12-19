@@ -43,7 +43,7 @@ class EvalAgent(object):
     def generate_score(self, content, query, criteria):
         prompt_data = {
             "query": query,
-            "response": process_gen_field(["response"]),
+            "response": process_gen_field(content["response"]),
             "criteria": criteria,
         }
         retry = 0
