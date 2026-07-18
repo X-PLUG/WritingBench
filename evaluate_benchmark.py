@@ -11,25 +11,49 @@ EVAL_TIMES = 1
 def process_gen_field(gen_content):
     marker = "</think>\n\n"
     marker_pos = gen_content.find(marker)
-    
+
     if marker_pos != -1:
         return gen_content[marker_pos + len(marker):]
     else:
         return gen_content
-        
+
+
+def extract_score_json(text):
+    """
+    Robustly pull the first valid {"score": ..., "reason": ...} object out of a
+    model response, tolerating code fences, <think> blocks, leading/trailing prose
+    and extra trailing objects that a local (quantized) critic may emit.
+    Returns the parsed dict, or None if none is found.
+    """
+    if not isinstance(text, str):
+        return None
+    marker = "</think>"
+    if marker in text:
+        text = text.split(marker, 1)[1]
+    decoder = json.JSONDecoder()
+    idx = text.find('{')
+    while idx != -1:
+        try:
+            obj, _ = decoder.raw_decode(text, idx)
+            if isinstance(obj, dict) and "score" in obj and "reason" in obj:
+                return obj
+        except json.JSONDecodeError:
+            pass
+        idx = text.find('{', idx + 1)
+    return None
+
 class EvalAgent(object):
     def __init__(self, agent):
         self.agent = agent
     
     def success_check_fn_score(self, response):
-        try:
-            result = json.loads(response.strip('json|```'))
-        except json.JSONDecodeError as e:
-            print("JSON decode error:", e)
+        result = extract_score_json(response)
+        if result is None:
+            print("Could not extract a valid score JSON from response")
             return False
-        
+
         valid_score_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        
+
         if "score" not in result or "reason" not in result:
             print("Missing 'score' or 'reason' in the result")
             return False
@@ -54,11 +78,10 @@ class EvalAgent(object):
                 prompt=prompt,
                 success_check_fn=self.success_check_fn_score
             )
-            try:
-                response = json.loads(response.strip('json|```'))
-            except json.JSONDecodeError as e:
-                print("JSON decode error:", e)
-                response = eval(response.strip('json|```'))
+            parsed = extract_score_json(response)
+            if parsed is not None:
+                response = parsed
+                success = True
             retry += 1
         if success:
             return response
